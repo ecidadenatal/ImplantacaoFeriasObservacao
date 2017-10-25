@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<modification>
+  <name>ImplantacaoFeriasObservacao</name>
+  <id id="ImplantacaoFeriasObservacao">ImplantacaoFeriasObservacao</id>
+  <ecidade-version>2.3.50</ecidade-version>
+
+  <file path='pes4_implantaferias001.php'>
+    <operation>
+      <search regex="true"><![CDATA[(\$matriz2\[20\].*=.*;)]]></search>
+      <add>
+        <![CDATA[$1
+          
+  /*
+   * Inicio Plugin ImplantacaoFeriasObservacao
+   */
+  $matriz1[21] = "r30_obs";
+  $matriz2[21] = $r30_obs;
+  /*
+   * Fim Plugin ImplantacaoFeriasObservacao
+   */
+]]></add>
+    </operation>
+  </file>
+  
+  <file path='forms/db_frmimplantaferias.php'>
+    <operation>
+      <search regex="true"><![CDATA[(db_input\(.*r30_abono.*\);.*\n*.*\<\/td\>)]]></search>
+      <add>
+        <![CDATA[$1
+      </tr>
+          
+      <!-- inicio plugin ImplantacaoFeriasObservacao -->
+      <tr>
+        <td colspan=2>
+          <fieldset>
+            <legend><b>Observação</b></legend>
+            <?db_textarea("r30_obs", 3, 100, 0, true, 'text', $db_opcao)?>
+          </fieldset>
+        </td>
+      <!-- fim plugin ImplantacaoFeriasObservacao -->
+]]></add>
+    </operation>    
+  </file>  
+  
+</modification>

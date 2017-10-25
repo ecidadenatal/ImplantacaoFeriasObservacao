@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<manifest>
+  <plugin name="ImplantacaoFeriasObservacao" label="Observação na Implantacao de Férias" plugin-version="1.0" ecidade-version="2.3.50" id-modulo="952">
+    <files>
+      <file name="ImplantacaoFeriasObservacao.xml"  path="/modification/xml/ImplantacaoFeriasObservacao.xml" />
+    </files>
+  </plugin>
+</manifest>
